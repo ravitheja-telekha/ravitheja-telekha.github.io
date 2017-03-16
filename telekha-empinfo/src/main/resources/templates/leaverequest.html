@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Telekha Employee Information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+
+<!-- <link rel="stylesheet" href="css/metricsgraphics.css" /> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        	</button>
+      		<a class="navbar-brand" href="/login">Telekha-Empinfo</a>
+    	</div>
+   
+    	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	 	<ul class="nav navbar-nav">   	 		 
+        	</ul>
+        </div>  
+     </div>
+</nav>
+
+ <div class="container" >                                       
+<div class="col-md-3">
+</div>                                   
+ <div class ="panel panel-default col-md-8"  style="margin-top:2cm;">
+<div align="center">	
+<!--        <div th:each="emp : ${emp}"></div> 
+ -->
+	<form action="#" th:action="leaveaction" method="get" id="searchForm" th:object="${Leaverequest}">		
+		<div id="custom-search-input">                                               
+<!--                         <input type="hidden" th:value="${emp.id}" name="id"/>
+ -->       
+                     <h4 style="text:center; color: blue;">Requesting for leave</h4>
+ 
+ <span> <h4>    From:<input type="date"   id="date" th:value="${fromdate}" name="fromdate"  required="true" />         
+                   To  :<input type="date"  id="date" th:value="${todate}" name="todate"  required="true" />   </h4>  </span>        
+              <h4 style="margin-right:400px;">    Reason:</h4><h4 style="margin-left:100px;"><textarea rows="15" cols="40" th:value="${reason}" name="reason" placeholder="reason" required="true" ></textarea> </h4>                                           
+                 <h4> Report To: <select required="true" id="Employee"  th:field="*{reportusers}" title="Choose a person to report" >
+  			               <option th:each="reportusers: ${T(com.telekha.empinfo.model.EmployeeReport).values()}" th:value="${reportusers}" th:text="${reportusers}"></option>
+  			              </select></h4>   		              
+                               <h4> <span class="input-group-btn">                                  
+                                    <button class="btn btn-primary" id="btnSubmit" type="submit">Submit                                     
+                                    </button>                                   
+                                </span></h4>                                                                                                                                               
+                            </div>                                    
+			    </form>	 
+			</div> 
+     </div>
+</div> 
+
+
+
+
+<div class="container">
+<div id="telk-registered-users"></div>
+<!-- 
+<div align="center" style="color: #4285f4">
+ <h1>Employees Information</h1>
+ 
+</div> -->
+</div>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</body>
+</html>

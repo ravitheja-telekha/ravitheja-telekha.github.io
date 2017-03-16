@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Telekha Employee Information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+
+<!-- <link rel="stylesheet" href="css/metricsgraphics.css" /> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        	</button>
+      		<a class="navbar-brand" href="/employeesinformation">Telekha-Empinfo</a>
+    	</div>
+    	
+    	<form action="#" th:action="@{/}" method="get" id="searchForm" style="float:right;margin-right:0.5cm;margin-top: 8px;" >
+<button  class="btn btn-primary" type="submit">Logout</button>
+   </form>
+    	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	 	<ul class="nav navbar-nav">
+<!--      	 	     <li><a class="active" href="/employeesinformation">Employees Information</a></li>   	 	      	 		   	 		  	 		 	 		 
+ -->    	 		    	 		    	 		   	 		 	 		 
+        	</ul>
+        </div>  
+     </div>
+</nav>
+
+
+<div class="container">
+		<div class="row">
+			<div class="dropdown center-block">
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	 	<ul class="nav navbar-nav">
+        		<li ><a href="/searchempbyid">  Search Employee By Id</a></li>  	
+        		<li class="active"><a href="/employeeslist">All Employees List</a></li>  	      		
+        	</ul>       			
+        </div>      
+	    </div>
+	</div>
+</div>
+
+
+
+<div align="center">
+   		    <form action="#" method="get" id="formId" th:action="@{/deletemultipleids}" th:object="${Employees}">  
+
+ <table style="width:500px" class="table table-striped" border="2">
+        <thead style="background-color: #4285f4">
+            <tr>
+                 <th> Id</th>                     
+                 <th>Employee Id</th>          
+                 <th>First name</th>
+                 <th>Last name</th> 
+                 <th>Gender</th>                 
+                 <th>Salary</th>
+                 <th>Designation</th>
+                 <th>Mobile Number</th>      
+                 <th>Email Id</th> 
+                 <th>Blood Group</th>  
+                 <th>Address</th>                                          
+                 <th>Report To</th>  
+                 <th>Status</th>  
+                 <th>Change Status To</th>                              
+                 <th>Remove Id</th>        
+                 <th>Edit</th>        
+            </tr>
+           </thead>  
+     <tbody>
+     
+       <tr th:each="employee : ${allemployeesList}">
+        <td> <input type="checkbox" id="checkbox_id" th:field="*{allemployeesLists}"  th:value="${employee.id}" th:text="${employee.id}" /></td>
+       
+<!--          <td th:text="${employee.id}" ></td>
+ -->       
+         <td th:text="${employee.empid}" ></td>
+       	
+   		 <td th:text="${employee.firstname}" ></td>
+   		 
+   		 <td th:text="${employee.lastname}" ></td>
+   		 
+   		 <td th:text="${employee.gender}" ></td>
+   		      	
+   		 <td th:text="${employee.salary}" ></td>
+   		 
+   		 <td th:text="${employee.desigopt}" ></td>
+   		
+   		 <td th:text="${employee.mobilenumber}" ></td>
+   		 
+   		 <td th:text="${employee.email}" ></td>
+   		  
+   		 <td th:text="${employee.bloodgrp}" ></td>
+   	   
+   	     <td th:text="${employee.address}" ></td>
+   		  
+   	     <td th:text="${employee.reportusers}" ></td>
+   		  
+   		
+   		  <td th:text="${employee.status}" ></td>
+   		  <td>
+     	    <form action="#" th:action="@{/changeemployeestatus}" method="get">
+     	 
+     	    <div th:if="${#strings.defaultString(employee.status, 'DEFAULT_VALUE') == null}">
+     	    <input type="hidden" th:value="${employee.id}" name="id"/>    
+               <button type="submit">Active</button></div>
+                    
+     	    <div th:if="${#strings.defaultString(employee.status, 'DEFAULT_VALUE') == 'INACTIVE'}">
+     	    <input type="hidden" th:value="${employee.id}" name="id"/>    
+               <button type="submit">Active</button></div>
+             
+            <div th:if="${#strings.defaultString(employee.status, 'DEFAULT_VALUE') == 'ACTIVE'}">
+            <input type="hidden" th:value="${employee.id}" name="id"/>
+               <button type="submit">Inactive</button>
+               </div></form>
+     	 </td> 		   		  
+   		 <td>
+   		   <form action="#" th:action="@{/deleteid}" method="get">
+           <input type="hidden" th:value="${employee.id}" name="id"/>
+           <button type="submit">Delete</button>
+           </form>  
+   		  </td>
+   		  <td>
+                      
+    <form action="#" th:action="@{/editempdetails}" method="get">
+     <input type="hidden" th:value="${employee.id}" name="id"/>
+     <input type="hidden" th:value="${employee.status}" name="status"/>
+               <input type="hidden" th:value="${employee.gender}" name="gender"/>
+     
+      <!--  <h4>first name:  <input type="hidden" th:value="${employee.fname}" name="fname"/></h4> 
+     <h4>Mobile no:<input type="hidden" th:value="${employee.mobno}" name="mobno"/></h4> 
+        -->
+       <button type="submit">Edit</button>
+       </form>              
+   		 </td>   		     		  
+   		 </tr>	
+   		 <div   style="margin-right:980px;">  <input type="checkbox" id="checkAll">&nbsp;SelectAll</input>&nbsp;<button  class="btn btn-primary" type="submit" id="delete" name="action" value="delete">Delete</button></div>		    		 	
+   		 </tbody>
+   
+        </table>
+       </form> 		
+</div>
+
+
+<div class="container">
+<div id="telk-registered-users"></div>
+
+<!-- <div align="center" style="color: #4285f4">
+ <h1>Employees Information</h1>
+ 
+</div> -->
+</div>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="js/metricsgraphics.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	$('#delete').click(function(){
+		
+		var number_of_checked_checkbox= $("input[name=allemployeesLists]:checked").length;
+		if(number_of_checked_checkbox==0){
+	        alert("You must select at least one!");
+	        return false;
+	    }else{
+	       return true;
+	    }
+	   });	
+$("#checkAll").change(function () {
+    $("input:checkbox").prop('checked', $(this).prop("checked"));
+});
+});
+</script>
+</body>
+</html>

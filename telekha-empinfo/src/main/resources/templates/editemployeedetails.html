@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Telekha Employee Information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+
+<!-- <link rel="stylesheet" href="css/metricsgraphics.css" /> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        	</button>
+      		<a class="navbar-brand" href="/employeesinformation">Telekha-Empinfo</a>
+    	</div>
+    	   	<form action="#" th:action="@{/}" method="get" id="searchForm" style="float:right;margin-right:0.5cm;margin-top: 8px;" >
+<button  class="btn btn-primary" type="submit">Logout</button>
+   </form>
+    	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	 	<ul class="nav navbar-nav">
+    	 	   <!--   <li><a href="/">Home</a></li>
+    	 		 <li><a  href="/empregform">Employee Registration form</a></li>
+       	 		 <li ><a  href="/searchempbyid">Search Employee By Id</a></li>
+       	 		 <li class="active"><a  href="/employeeslist">Employees List</a></li> -->
+       	 		 
+    	 		 
+    	 		 	 		 
+        	</ul>
+        </div>  
+     </div>
+</nav>
+
+		
+
+<div align="center">
+
+ <table style="width:800px" class="table table-striped" border="2">
+        <thead style="background-color: #4285f4">
+            <tr>                
+                 <th>Edit the details</th>                      
+           </tr>
+          </thead>  
+     <tbody>
+       <tr th:each="employee : ${employee}">
+                    	
+   		 
+    <td>
+     <form action="#" th:action="@{/update}" method="get" th:object="${Employee}">
+     <input type="hidden" th:value="${employee.id}" name="id"/>
+     <input type="hidden" th:value="${employee.password}" name="password"/>
+      <h4>Employee Id:  <input type="text" th:value="${employee.empid}" name="empid"/></h4> 
+      <h4>First name:  <input type="text" th:value="${employee.firstname}" name="firstname"/></h4> 
+      <h4>Last name:  <input type="text" th:value="${employee.lastname}" name="lastname"/></h4>     
+      <h4>Salary:  <input type="text" th:value="${employee.salary}" name="salary"/></h4>     
+      <h4>Mobile no:<input type="text" th:value="${employee.mobilenumber}" name="mobilenumber"/></h4>   
+      <h4>Email Id:<input type="email" th:value="${employee.email}" name="email"/></h4>    
+      <h4>BloodGroup:<input type="text" th:value="${employee.bloodgrp}" name="bloodgrp"/></h4>   
+      <h4 style="margin-right:250px;" >Address:</h4><h4 style="margin-left:100px;"> <textarea th:value="${employee.address}" th:text="${employee.address}" name="address" ></textarea></h4>                                                
+       <h4> Designation: <select required="true" id="employee"  th:field="*{desigopt}" title="Choose a desig" >
+  		                 <option th:each="desigopt: ${T(com.telekha.empinfo.model.EmployeeDesig).values()}" th:value="${desigopt}" th:text="${desigopt}"></option> </select></h4>          
+  		
+  		<h4> Report To: <select required="true" id="Employee"  th:field="*{reportusers}" title="Choose a person to report" >
+  			               <option th:each="reportusers: ${T(com.telekha.empinfo.model.EmployeeReport).values()}" th:value="${reportusers}" th:text="${reportusers}"></option>
+  			              </select></h4>    
+  		              <div>
+                        <label>Gender: </label>                         
+                             <input type="radio" th:field="*{gender}" th:value="${Male}" name="male" />
+                         <label>Male</label>                              
+                             <input type="radio" th:field="*{gender}" th:value="${Female}" name="female" />
+                          <label>Female</label>
+                           
+                        </div> 
+  			              	                 
+  		  				 			               
+        <button type="submit">Update</button>
+         
+       </form>              
+   		 </td>		  
+   		  
+   		     		 </tr>		
+   		 </tbody>
+   		 </table>
+</div>
+
+
+<div class="container">
+<div id="telk-registered-users"></div>
+
+<!-- <div align="center" style="color: #4285f4">
+ <h1>Employees Information</h1>
+ 
+</div> -->
+</div>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</body>
+</html>

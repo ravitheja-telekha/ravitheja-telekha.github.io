@@ -1,0 +1,12 @@
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/model/Leaverequest.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/model/Employee.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/model/EmployeeStatus.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/model/Post.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/repository/PostRepository.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/controller/EmployeeController.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/repository/LeaveRepository.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/Application.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/model/EmployeeDesig.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/controller/PostController.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/model/EmployeeReport.java
+/home/telekha-03/raviteja/telekha-empinfo/src/main/java/com/telekha/empinfo/repository/EmployeeRepository.java

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Telekha Employee Information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+
+<!-- <link rel="stylesheet" href="css/metricsgraphics.css" /> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        	</button>
+      		<a class="navbar-brand" href="/employeesinformation">Telekha-Empinfo</a>
+      		
+    	</div>
+    	
+        	
+	
+<form action="#" th:action="@{/}" method="get" id="searchForm" style="float:right;margin-right:0.5cm;margin-top: 8px;" >
+<button  class="btn btn-primary" type="submit">Logout</button>
+   </form>
+   <form action="#" th:action="@{/changepasswordpage}" method="get" id="searchForm" style="float:right;margin-right:0.5cm;margin-top: 8px;" >
+<button  class="btn btn-primary" type="submit">Settings</button>
+   </form> 	
+    	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	 	<ul class="nav navbar-nav">
+<!--    	 		 <li style="margin-left:900px;"><a  href="/changepasswordpage">Settings</a></li>   
+ -->   	 		      	 		 
+        	</ul>
+        </div>  
+     </div>
+</nav>
+
+<div class="container">
+		<div class="row">
+			<div class="dropdown center-block">
+	         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	 	  <ul class="nav navbar-nav">
+<!--     	 		<li ><a href="/empregform">Employee Registration Form</a></li>
+ -->        		<li class="active"><a href="/searchempbyid">Search Employee By Id</a></li>  	
+        		<li><a href="/employeeslist">All Employees List</a></li>  
+        		<li><a href="/leaverequest">leaverequest</a></li>  	      		
+<!--         	   <li><a href="/post">post image</a></li>  	      		
+ -->        			      		
+        	  </ul>       			
+          </div>      
+	    </div>
+	</div>
+</div>
+
+
+
+
+<div class="container">
+<div id="telk-registered-users"></div>
+
+<div align="center" style="color: #4285f4">
+<!--  <h1>Employees Information</h1>
+ --> 
+</div>
+</div>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</body>
+</html>
