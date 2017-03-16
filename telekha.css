@@ -1,0 +1,479 @@
+body{
+  overflow-x:hidden;
+width:100%;
+height:100%;
+margin:0;
+padding: 0;
+}
+.active{
+  background:red;
+}
+/*::-webkit-scrollbar{
+    width: 13px;
+    height: 10px;
+    padding-top: 40px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance:none;
+}
+::-webkit-scrollbar:vertical {
+    width: 16px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 64px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}*/
+.stop-scrolling {
+    overflow:hidden;
+    height: 100%;
+    left: 0;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.menubar
+{
+margin-top:2%;
+background-color:white;
+
+}
+.title
+{
+
+width:120px;
+margin-left:10px;
+margin-top:-4px;
+}
+.logoimage
+{
+  width: 89px;
+  height: 28px;
+  margin-top: -4px;
+
+  margin-left:10px;
+}
+#title1
+{
+  text-decoration:none;
+}
+
+
+
+
+  ul li
+  {
+
+      color:#4285f;
+      text-decoration:none;
+      margin-right:10px;
+}
+.listitems
+{
+  float:right;
+  margin-top:-3%;
+}
+
+.listitems1{
+  float:right;
+  margin-top:-4%;
+}
+
+.contact{
+  margin-right:10px;
+}
+
+
+li{
+display:inline;
+cursor:auto;
+
+}
+
+#toggle1{
+margin-top:-11.5%;
+margin-right:5%;
+}
+#home{
+  background:url(telekhaimages/startup-593338_1920.jpg) no-repeat;
+background-size:100% 100%;
+  opacity: 0.8;
+
+}
+
+#alignment1
+{
+  margin-right:0px;
+  margin-left:0px;
+}
+.smoothscroll
+{
+  text-decoration:none;
+  font-family:Segoe UI;
+  font-size:16px;
+
+}
+.alignment1
+{
+  margin-right:0px;margin-left:0px;
+}
+.welcometext
+{
+  margin-top: 30%;
+  color:white;
+  text-align:center;
+  font-family:Cinzel;
+}
+.margin{
+  margin-right:0px;
+  margin-left:0px;
+}
+.abouttelekha
+{
+  color:white;margin-top:5%;
+  font-size:160%;
+  margin-bottom:45%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding:2%;
+font-family: "Sentinel SSm A","Sentinel SSm B",serif;
+
+}
+a:hover{
+  text-decoration:none;
+}
+.appstore
+{
+margin-left:100%;
+margin-bottom:0.3cm;
+}
+#appimages
+{
+  margin-top:-10%;
+}
+
+.aboutus
+{
+  background-color:rgb(244, 246, 246);
+  text-align:justify;
+ text-justify: inter-word;
+}
+.heading
+{
+  text-align:center;
+  margin-top:10%;
+  font-weight:500;
+  font-family: "Sentinel SSm A","Sentinel SSm B",serif;
+}
+.bottom
+{
+  margin-bottom:2cm;
+}
+
+.ourservices
+{
+  background-color:white;
+  text-align:justify;
+
+}
+.margin
+{
+  margin-left:15%;
+  margin-right:15%;
+  text-align:justify;
+}
+.color
+{
+  color:#0081ff;
+}
+
+.imgborder
+{
+
+  float:left;
+  margin-left:5%;
+  width:100%;
+
+  margin-top:2%;
+
+}
+.imgsize
+{
+
+  height:40px;
+}
+.width{
+  width:80%;
+}
+
+.contactus
+{
+  background-color:white;
+  text-align:justify;
+  margin-bottom:10%;
+   text-justify: inter-word;
+}
+
+.adrs
+{
+  color:black;
+  margin-top:10%;
+  padding:10%;
+  margin-bottom:1cm;
+}
+.center
+{
+  text-align:center;
+}
+.box
+{
+width:100%;
+margin-top:5%;
+}
+textarea{
+  resize:none;
+}
+.button
+{
+  width:100%;
+  margin-top:5%;
+  background-color:#0081ff;
+  padding:2%;
+  color:white;
+  margin-bottom:5%;
+
+}
+.gallerypage
+{
+  background-color:white;
+
+}
+.border
+{
+
+/*border: 2px solid rgb(238, 238, 238);*/
+margin-top:5%;
+margin-bottom:1cm;
+
+}
+.space
+{
+  margin-top:3%;
+
+}
+.inline
+{
+  display:inline;
+}
+
+.textarrange
+{
+  text-align:justify;
+}
+.italic
+{
+  font-style: italic;
+  font-family: Vollkorn;
+  font-size:17px;
+}
+.heading1
+{
+  font-family:"Sentinel SSm A","Sentinel SSm B",serif;
+  text-align:center;
+  margin-top:25%;
+  font-weight:500;
+}
+.centeredimage
+{
+  display: block;
+    margin: auto;
+}
+.serviceimage
+{
+  width:13%;
+
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    /width:100%;
+    height:100%;
+    overflow-y:auto;/* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
+
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    overflow-y:hidden;
+
+}
+
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    overflow:hidden;
+
+}
+
+html.noscroll{
+position:fixed;
+width: 100%;
+top:0;
+left: 0;
+height: 100%;
+overflow-y:hidden;
+z-index: 10;
+
+ }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+        overflow:hidden;
+    }
+}
+.imagesize
+{
+  width:96%;
+
+}
+.left
+{
+  margin-left:6%;
+}
+.top
+{
+  margin-top:4%;
+}
+#top1
+{
+  margin-top:24%;
+}
+#tableheight
+{
+  height:325px;
+}
+#tableheight1
+{
+  height:334px;
+}
+.imgwidth
+{
+  width:60%;
+  margin-left:10%;
+}
+.modal-content {
+    -webkit-animation-name:zoom;
+    -webkit-animation-duration: 0.4s;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.box{
+  display:flex;
+
+}
+
+.alignment
+{
+
+display:table-cell;
+vertical-align:middle;
+line-height:2;
+
+}
+.table1
+{
+  display:table;
+  position:relative;
+  background-color:rgba(128, 128, 128, 0.18);
+  margin-top:5%;
+  padding:6%;
+  cursor:default;
+height:300px;
+box-shadow:1px 1px 5px;
+}
+.table1:hover{
+  background:#44b272;
+  transition: all 0.3s ease-in-out;
+  opacity:1;
+  color:white;
+
+}
+
+.arrows
+{
+  display:none;
+}
+.video{
+height: 477px;
+width: 480px;
+margin-left: -50%;
+
+}
+.video1
+{
+  color:blue;
+  text-decoration:none;
+  float:right;
+}
+.video2
+{
+  width:76%;
+  margin-top:3%;
+  margin-left:3%;
+}
+.modalopen
+{
+  overflow-y:hidden;
+}
+.backButton
+{
+  float:left;opacity:initial;color:white;margin-top:20%;cursor:pointer;
+}
+.forwardButton
+{
+float:right;opacity:initial;color:white;margin-top:20%;cursor:pointer;
+}
+.font {
+
+    font-family: Marriage Moment;
+font-size: 16px;
+  }
